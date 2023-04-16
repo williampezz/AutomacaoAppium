@@ -78,6 +78,7 @@ public class FormularioTeste extends BaseTest {
 
     @Test
 	   public void deveRealizarCadastro() {
+		 //realiza cadastro do desafio
 		 formulario.escreverNome("William");
 		 formulario.clicarCheck();
 		 formulario.clicarSwitch();
