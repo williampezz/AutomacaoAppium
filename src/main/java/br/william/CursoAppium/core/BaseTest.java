@@ -25,7 +25,7 @@ public class BaseTest {
         genScreenShot();
         DriverFactory.getDriver().resetApp();
     }
-
+//tst
     public void genScreenShot() {
 
         try {
