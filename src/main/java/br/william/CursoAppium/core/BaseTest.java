@@ -22,11 +22,11 @@ public class BaseTest {
     }
     @After
     public void tearDown() {
-        gerarScreenShot();
+        genScreenShot();
         DriverFactory.getDriver().resetApp();
     }
 
-    public void gerarScreenShot() {
+    public void genScreenShot() {
 
         try {
             File imagem =  ((TakesScreenshot)DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
