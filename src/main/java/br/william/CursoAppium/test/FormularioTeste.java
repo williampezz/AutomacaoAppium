@@ -2,8 +2,10 @@ package br.william.CursoAppium.test;
 
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import br.william.CursoAppium.core.BaseTest;
+import br.william.CursoAppium.core.DriverFactory;
 import br.william.CursoAppium.page.FormularioPage;
 import br.william.CursoAppium.page.MenuPage;
 import org.junit.Test;
@@ -86,4 +88,14 @@ public class FormularioTeste extends BaseTest {
 		 formulario.isSwitchMarcado();
 		 formulario.salvar();
 	}
+
+	@Test
+	public void deveRealizarCadastroDemorado() {
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		//realiza cadastro do desafio
+		formulario.escreverNome("William");
+
+		formulario.salvarDemorado();
+	}
+
 	 }              

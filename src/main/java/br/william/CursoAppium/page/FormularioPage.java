@@ -41,7 +41,11 @@ public class FormularioPage extends BasePage {
     }
 
     public void salvar() {
-        clicarporTexto("Salvar");
+        clicarporTexto("SALVAR");
+    }
+
+    public void salvarDemorado() {
+        clicarporTexto("SALVAR DEMORADO");
     }
 
 }

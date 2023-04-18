@@ -23,7 +23,7 @@ public class BaseTest {
     @After
     public void tearDown() {
         genScreenShot();
-        DriverFactory.getDriver().resetApp();
+       // DriverFactory.getDriver().resetApp();
     }
 //tst
     public void genScreenShot() {
@@ -35,4 +35,6 @@ public class BaseTest {
             throw new RuntimeException(e);
         }
     }
+
+
 }
