@@ -41,6 +41,7 @@ public class DriverFactory {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} //Inicializa comunicação com o Servidor
+		//espera implicita
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		

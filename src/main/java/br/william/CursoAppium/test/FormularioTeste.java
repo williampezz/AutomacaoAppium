@@ -11,6 +11,10 @@ import br.william.CursoAppium.page.MenuPage;
 import org.junit.Test;
 
 import junit.framework.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -91,11 +95,16 @@ public class FormularioTeste extends BaseTest {
 
 	@Test
 	public void deveRealizarCadastroDemorado() {
-		DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
 		//realiza cadastro do desafio
 		formulario.escreverNome("William");
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 
 		formulario.salvarDemorado();
+
+		//Espera explicita. Espera ate o elemento aparecer
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 10);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Nome: William']")));
 	}
 
 	 }              
