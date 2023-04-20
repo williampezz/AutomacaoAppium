@@ -1,11 +1,15 @@
 package br.william.CursoAppium.core;
 
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 import static br.william.CursoAppium.core.DriverFactory.getDriver;
 
 public class BasePage {
 
+    //METODOS GENERICOS DE USO COMUM
     public void escrever(By by, String texto) {
 
         getDriver().findElement(by).sendKeys(texto);
@@ -38,4 +42,8 @@ public class BasePage {
         return getDriver().findElement(by).getAttribute("checked").equals("true");
     }
 
+    public boolean existeUmElementoPorTexto(String texto) {
+            List <MobileElement>elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
+            return elementos.size() > 0;
+    }
 }

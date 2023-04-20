@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 
 public class FormularioPage extends BasePage {
 
+    //AQUI VOU PASSSAR O NOME DOS ELEMENTOS ENCONTRADOS
+
     public void escreverNome(String nome) {
         escrever(MobileBy.AccessibilityId("nome"), nome);
     }
